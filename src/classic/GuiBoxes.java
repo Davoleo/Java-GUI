@@ -1,14 +1,16 @@
+package classic;
+
 import javax.swing.*;
 
 /*************************************************
  * Author: Davoleo
  * Date / Hour: 01/12/2018 / 23:47
- * Class: Main
+ * Class: classic.GuiBoxes
  * Project: JavaGUI
  * Copyright - © - Davoleo - 2018
  **************************************************/
 
-public class Main {
+public class GuiBoxes {
 
     public static void main(String[] args)
     {
