@@ -1,6 +1,7 @@
 package jframe;
 
 import event.EventGui;
+import jframe.buttons.JButtonGui;
 
 import javax.swing.*;
 
@@ -18,7 +19,7 @@ public class MainJFrame {
     {
         JFrameGui gui = new JFrameGui();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setSize(300,300);
+        gui.setSize(200,100);
         gui.setVisible(true);
 
 
@@ -26,5 +27,10 @@ public class MainJFrame {
         eventGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         eventGui.setSize(500,100);
         eventGui.setVisible(true);
+
+        JButtonGui buttonGui = new JButtonGui();
+        buttonGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        buttonGui.setSize(300, 100);
+        buttonGui.setVisible(true);
     }
 }
