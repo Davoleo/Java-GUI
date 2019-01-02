@@ -1,4 +1,4 @@
-package jframe.buttons;
+package jframe.controls;
 
 import javax.swing.*;
 import java.awt.*;

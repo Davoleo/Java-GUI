@@ -1,7 +1,8 @@
 package jframe;
 
 import event.EventGui;
-import jframe.buttons.JButtonGui;
+import jframe.controls.JButtonGui;
+import jframe.controls.JCheckboxGui;
 
 import javax.swing.*;
 
@@ -24,13 +25,15 @@ public class MainJFrame {
 
 
         EventGui eventGui = new EventGui();
-        eventGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         eventGui.setSize(500,100);
         eventGui.setVisible(true);
 
         JButtonGui buttonGui = new JButtonGui();
-        buttonGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         buttonGui.setSize(300, 100);
         buttonGui.setVisible(true);
+
+        JCheckboxGui checkboxGui = new JCheckboxGui();
+        checkboxGui.setSize(270, 100);
+        checkboxGui.setVisible(true);
     }
 }
