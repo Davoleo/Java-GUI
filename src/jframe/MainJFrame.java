@@ -47,5 +47,9 @@ public class MainJFrame {
         listGui.setSize(100, 200);
         listGui.setVisible(true);
 
+        JMultiListGui multiListGui = new JMultiListGui();
+        multiListGui.setSize(350, 120);
+        multiListGui.setVisible(true);
+
     }
 }
