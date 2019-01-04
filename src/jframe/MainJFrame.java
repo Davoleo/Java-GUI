@@ -3,6 +3,7 @@ package jframe;
 import event.EventGui;
 import jframe.controls.JButtonGui;
 import jframe.controls.JCheckboxGui;
+import jframe.controls.JComboboxGui;
 import jframe.controls.JRadioButtonGui;
 
 import javax.swing.*;
@@ -40,6 +41,10 @@ public class MainJFrame {
         JRadioButtonGui radioButtonGui = new JRadioButtonGui();
         radioButtonGui.setSize(300, 100);
         radioButtonGui.setVisible(true);
+
+        JComboboxGui comboboxGui = new JComboboxGui();
+        comboboxGui.setSize(300, 100);
+        comboboxGui.setVisible(true);
 
     }
 }
