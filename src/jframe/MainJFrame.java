@@ -1,10 +1,7 @@
 package jframe;
 
 import event.EventGui;
-import jframe.controls.JButtonGui;
-import jframe.controls.JCheckboxGui;
-import jframe.controls.JComboboxGui;
-import jframe.controls.JRadioButtonGui;
+import jframe.controls.*;
 
 import javax.swing.*;
 
@@ -45,6 +42,10 @@ public class MainJFrame {
         JComboboxGui comboboxGui = new JComboboxGui();
         comboboxGui.setSize(300, 100);
         comboboxGui.setVisible(true);
+
+        JListGui listGui = new JListGui();
+        listGui.setSize(100, 200);
+        listGui.setVisible(true);
 
     }
 }
