@@ -1,4 +1,4 @@
-package event;
+package swing.jframe.event;
 
 import javax.swing.*;
 import java.awt.*;

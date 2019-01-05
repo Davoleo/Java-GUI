@@ -1,11 +1,11 @@
-package classic;
+package swing.practice;
 
 import javax.swing.*;
 
 /*************************************************
  * Author: Davoleo
  * Date / Hour: 01/12/2018 / 23:47
- * Class: classic.GuiBoxes
+ * Class: swing.practice.GuiBoxes
  * Project: JavaGUI
  * Copyright - © - Davoleo - 2018
  **************************************************/
@@ -14,6 +14,7 @@ public class GuiBoxes {
 
     public static void main(String[] args)
     {
+        //Some super-simple sum program (Just using Swing input and output dialogs)
 
         String fn = JOptionPane.showInputDialog("Enter first number");
         String sn = JOptionPane.showInputDialog("Enter second number");

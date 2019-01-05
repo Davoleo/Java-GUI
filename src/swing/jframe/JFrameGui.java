@@ -1,4 +1,4 @@
-package jframe;
+package swing.jframe;
 
 import javax.swing.*;
 import java.awt.*;

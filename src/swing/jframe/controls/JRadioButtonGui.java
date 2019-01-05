@@ -1,4 +1,4 @@
-package jframe.controls;
+package swing.jframe.controls;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,7 +64,7 @@ public class JRadioButtonGui extends JFrame {
             this.font = font;
         }
 
-        //Sets the font at runtime when the event is TRIGGERED
+        //Sets the font at runtime when the swing.jframe.event is TRIGGERED
         @Override
         public void itemStateChanged(ItemEvent e)
         {

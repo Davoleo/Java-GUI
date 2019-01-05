@@ -1,7 +1,7 @@
-package jframe;
+package swing.jframe;
 
-import event.EventGui;
-import jframe.controls.*;
+import swing.jframe.event.EventGui;
+import swing.jframe.controls.*;
 
 import javax.swing.*;
 

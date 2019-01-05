@@ -1,4 +1,4 @@
-package jframe.controls;
+package swing.jframe.controls;
 
 import javax.swing.*;
 import java.awt.*;
