@@ -1,6 +1,7 @@
 package swing.jframe.layouts;
 
 import javax.swing.*;
+import java.awt.*;
 
 /*************************************************
  * Author: Davoleo
@@ -15,25 +16,35 @@ public class FormBorderLayout extends JFrame {
     public FormBorderLayout()
     {
         super("Border Layout Example");
-//        finestra.setSize(600, 500);
-//        JLabel label = new JLabel("Un'etichetta dentro la finestra esempio");
-//        finestra.add(label, BorderLayout.WEST);
-//        finestra.setVisible(true);
-//        pause(3);
-//        label.setText("E INVECE NO!");
-//        label.setForeground(Color.RED);
-//
-//        //Per lo sfondo della finestra bisogna accedere al pane del contenuto del frame
-//        finestra.getContentPane().setBackground(Color.BLACK);
-//        label.setOpaque(true);
-//        label.setBackground(Color.DARK_GRAY);
-//
-//        JLabel label2 = new JLabel("seconda etichetta...");
-//        label2.setOpaque(true);
-//        label2.setBackground(Color.YELLOW);
-//        finestra.add(label2, BorderLayout.EAST);
-//
-//        finestra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        JLabel label = new JLabel("Un'etichetta dentro la finestra esempio");
+        add(label, BorderLayout.WEST);
+        label.setText("E INVECE NO!");
+        label.setForeground(Color.RED);
+        //Per lo sfondo della finestra bisogna accedere al pane del contenuto del frame
+        getContentPane().setBackground(Color.BLACK);
+
+        //Lo sfondo delle label di default è trasparente, bisogna dunque settarlo come opaco prima di poter vedere il colore
+        label.setOpaque(true);
+        label.setBackground(Color.DARK_GRAY);
+
+        JLabel label2 = new JLabel("seconda etichetta...");
+        label2.setOpaque(true);
+        label2.setBackground(Color.YELLOW);
+        add(label2, BorderLayout.EAST);
+
+        JLabel label3 = new JLabel("Top Label");
+        label3.setForeground(Color.WHITE);
+        add(label3, BorderLayout.NORTH);
+
+        JLabel label4 = new JLabel("Bottom Label");
+        label4.setForeground(Color.WHITE);
+        add(label4, BorderLayout.SOUTH);
+
+        JButton button = new JButton("Center Button");
+        add(button);
+
     }
 
 }
