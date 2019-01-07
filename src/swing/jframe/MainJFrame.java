@@ -1,6 +1,6 @@
 package swing.jframe;
 
-import swing.jframe.event.EventGui;
+import swing.jframe.event.ActionEventGui;
 import swing.jframe.controls.*;
 
 import javax.swing.*;
@@ -23,9 +23,9 @@ public class MainJFrame {
         gui.setVisible(true);
 
 
-        EventGui eventGui = new EventGui();
-        eventGui.setSize(500,100);
-        eventGui.setVisible(true);
+        ActionEventGui actionEventGui = new ActionEventGui();
+        actionEventGui.setSize(500,100);
+        actionEventGui.setVisible(true);
 
         JButtonGui buttonGui = new JButtonGui();
         buttonGui.setSize(300, 100);

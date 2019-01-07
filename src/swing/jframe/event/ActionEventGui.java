@@ -13,14 +13,16 @@ import java.awt.event.ActionListener;
  * Copyright - © - Davoleo - 2018
  **************************************************/
 
-public class EventGui extends JFrame {
+public class ActionEventGui extends JFrame {
 
+    private Container content = getContentPane();
     private JTextField textBox1;
     private JTextField textBox2;
     private JTextField textBox3;
     private JPasswordField pwBox;
+    private JButton backgroundButton;
 
-    public EventGui()
+    public ActionEventGui()
     {
         super("Event Handlers");
         setLayout(new FlowLayout());
@@ -30,12 +32,14 @@ public class EventGui extends JFrame {
         textBox2 = new JTextField("enter text here...");
         textBox3 = new JTextField("uneditable", 20);
         pwBox = new JPasswordField("my P455w0rd");
+        backgroundButton = new JButton("Event Button");
 
         //Adding components to the window
         add(textBox1);
         add(textBox2);
         add(textBox3);
         add(pwBox);
+        add(backgroundButton);
 
         //Setting the third textbox as read-only
         textBox3.setEditable(false);
@@ -46,6 +50,7 @@ public class EventGui extends JFrame {
         textBox2.addActionListener(handler);
         textBox3.addActionListener(handler);
         pwBox.addActionListener(handler);
+        backgroundButton.addActionListener(handler);
 
     }
 
@@ -66,7 +71,10 @@ public class EventGui extends JFrame {
             else if(e.getSource() == pwBox)
                 result = String.format("password field is: %s", e.getActionCommand());
 
-            JOptionPane.showMessageDialog(null, result);
+            if (e.getSource() == backgroundButton)
+                content.setBackground(Color.magenta);
+            else
+                JOptionPane.showMessageDialog(null, result);
         }
 
     }
