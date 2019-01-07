@@ -2,6 +2,7 @@ package swing.jframe;
 
 import swing.jframe.event.ActionEventGui;
 import swing.jframe.controls.*;
+import swing.jframe.event.KeyEventGui;
 
 import javax.swing.*;
 
@@ -50,6 +51,10 @@ public class MainJFrame {
         JMultiListGui multiListGui = new JMultiListGui();
         multiListGui.setSize(350, 120);
         multiListGui.setVisible(true);
+
+        KeyEventGui keyGui = new KeyEventGui();
+        keyGui.setSize(200, 200);
+        keyGui.setVisible(true);
 
     }
 }
