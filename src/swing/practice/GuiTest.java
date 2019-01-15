@@ -30,7 +30,7 @@ public class GuiTest {
             @Override
             public void mouseExited(MouseEvent e)
             {
-                ((JButton)e.getSource()).getBackground(Backgrou);
+                ((JButton)e.getSource()).setBackground(Color.WHITE);
             }
         });
     }
