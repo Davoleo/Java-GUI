@@ -2,6 +2,7 @@ package swing;
 
 import swing.jframe.layouts.FormBorderLayout;
 import swing.jframe.layouts.FormBoxLayout;
+import swing.practice.GuiTest;
 
 import javax.swing.*;
 
@@ -25,6 +26,12 @@ public class Main {
         FormBoxLayout boxLayout = new FormBoxLayout();
         boxLayout.setSize(350, 150);
         boxLayout.setVisible(true);
+
+
+        JFrame designerGuiTest = new JFrame("Designer Form Test");
+        designerGuiTest.setContentPane(new GuiTest().getMainPanel());
+        designerGuiTest.pack();
+        designerGuiTest.setVisible(true);
 
 
     }

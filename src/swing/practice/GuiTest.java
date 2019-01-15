@@ -1,6 +1,9 @@
 package swing.practice;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /*************************************************
  * Author: Davoleo
@@ -11,12 +14,29 @@ import javax.swing.*;
  **************************************************/
 
 public class GuiTest {
+    private JPanel mainPanel;
     private JButton button1;
-    private JSlider slider1;
-    private JComboBox comboBox1;
-    private JTree tree1;
-    private JSpinner spinner1;
-    private JCheckBox checkBox1;
-    private JCheckBox checkBox2;
-    private JRadioButton radioButton1;
+
+    public GuiTest()
+    {
+        button1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e)
+            {
+                ((JButton)e.getSource()).setBackground(Color.GREEN);
+            }
+        });
+        button1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e)
+            {
+                ((JButton)e.getSource()).getBackground(Backgrou);
+            }
+        });
+    }
+
+    public JPanel getMainPanel()
+    {
+        return mainPanel;
+    }
 }
