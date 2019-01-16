@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="swing.jframe.layouts.FormFlowLayout">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="c51d3" class="javax.swing.JLabel" binding="userLabel">
+        <constraints/>
+        <properties>
+          <text value="User: "/>
+        </properties>
+      </component>
+      <component id="701f6" class="javax.swing.JTextField" binding="userBox">
+        <constraints/>
+        <properties>
+          <selectionColor color="-2254848"/>
+          <text value="Username"/>
+        </properties>
+      </component>
+      <component id="92476" class="javax.swing.JLabel" binding="passwordLabel">
+        <constraints/>
+        <properties>
+          <text value="Password: "/>
+        </properties>
+      </component>
+      <component id="7c296" class="javax.swing.JPasswordField" binding="passwordBox">
+        <constraints/>
+        <properties>
+          <echoChar value="§"/>
+          <preferredSize width="64" height="30"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="39122" class="javax.swing.JButton" binding="submitButton">
+        <constraints/>
+        <properties>
+          <text value="LOGIN"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

@@ -3,6 +3,7 @@ package swing;
 import swing.jframe.layouts.FormAbsoluteLayout;
 import swing.jframe.layouts.FormBorderLayout;
 import swing.jframe.layouts.FormBoxLayout;
+import swing.jframe.layouts.FormFlowLayout;
 import swing.practice.GuiTest;
 
 import javax.swing.*;
@@ -31,6 +32,11 @@ public class Main {
         FormAbsoluteLayout absoluteLayout = new FormAbsoluteLayout();
         absoluteLayout.setSize(200, 150);
         absoluteLayout.setVisible(true);
+
+        JFrame flowLayout = new JFrame("Flow Layout Example!");
+        flowLayout.setContentPane(new FormFlowLayout().getPanel1());
+        flowLayout.pack();
+        flowLayout.setVisible(true);
 
         JFrame designerGuiTest = new JFrame("Designer Form Test");
         designerGuiTest.setContentPane(new GuiTest().getMainPanel());
