@@ -1,5 +1,6 @@
 package swing;
 
+import swing.jframe.layouts.FormAbsoluteLayout;
 import swing.jframe.layouts.FormBorderLayout;
 import swing.jframe.layouts.FormBoxLayout;
 import swing.practice.GuiTest;
@@ -27,6 +28,9 @@ public class Main {
         boxLayout.setSize(350, 150);
         boxLayout.setVisible(true);
 
+        FormAbsoluteLayout absoluteLayout = new FormAbsoluteLayout();
+        absoluteLayout.setSize(200, 150);
+        absoluteLayout.setVisible(true);
 
         JFrame designerGuiTest = new JFrame("Designer Form Test");
         designerGuiTest.setContentPane(new GuiTest().getMainPanel());
