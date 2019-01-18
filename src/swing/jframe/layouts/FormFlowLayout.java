@@ -28,7 +28,7 @@ public class FormFlowLayout {
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                submitButton.setPreferredSize(new Dimension(50, 50));
+                //submitButton.setPreferredSize(new Dimension(50, 50));
                 submitButton.setSize(50, 50);
             }
         });

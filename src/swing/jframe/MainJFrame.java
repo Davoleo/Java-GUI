@@ -3,6 +3,7 @@ package swing.jframe;
 import swing.jframe.event.ActionEventGui;
 import swing.jframe.controls.*;
 import swing.jframe.event.KeyEventGui;
+import swing.jframe.event.MouseEventGui;
 
 import javax.swing.*;
 
@@ -55,6 +56,10 @@ public class MainJFrame {
         KeyEventGui keyGui = new KeyEventGui();
         keyGui.setSize(200, 200);
         keyGui.setVisible(true);
+
+        MouseEventGui mouseGui = new MouseEventGui();
+        mouseGui.setSize(400, 400);
+        mouseGui.setVisible(true);
 
     }
 }
