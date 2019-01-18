@@ -18,6 +18,7 @@ public class MouseEventGui extends JFrame {
 
     private JPanel mousePanel;
     private JLabel statusBar;
+    private JLabel mouseButton;
 
     public MouseEventGui()
     {
@@ -30,6 +31,9 @@ public class MouseEventGui extends JFrame {
         statusBar = new JLabel("Default");
         add(statusBar, BorderLayout.SOUTH);
 
+        mouseButton = new JLabel("None");
+        add(mouseButton, BorderLayout.NORTH);
+
         //Listener: Makes you override all the methods
         //Adapter: Lets you choose which methods to override
 
@@ -38,6 +42,13 @@ public class MouseEventGui extends JFrame {
             public void mouseClicked(MouseEvent e)
             {
                 statusBar.setText(String.format("Clicked at %d, %d", e.getX(), e.getY()));
+
+                if (e.isMetaDown())
+                    mouseButton.setText("Right Click");
+                else if (e.isAltDown())
+                    mouseButton.setText("Center Click");
+                else
+                    mouseButton.setText("Left Click");
             }
 
             @Override
