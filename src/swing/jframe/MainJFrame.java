@@ -61,5 +61,11 @@ public class MainJFrame {
         mouseGui.setSize(400, 400);
         mouseGui.setVisible(true);
 
+        JFrame tabbedPaneGui = new JFrame("JTabbedPane Example!");
+        tabbedPaneGui.setContentPane(new JTabbedPaneGui().getPanel1());
+        tabbedPaneGui.pack();
+        tabbedPaneGui.setVisible(true);
+
+
     }
 }
