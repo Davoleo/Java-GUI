@@ -4,6 +4,8 @@ import swing.jframe.event.ActionEventGui;
 import swing.jframe.controls.*;
 import swing.jframe.event.KeyEventGui;
 import swing.jframe.event.MouseEventGui;
+import swing.jframe.graphics.ColorPickerGui;
+import swing.jframe.graphics.GFX;
 
 import javax.swing.*;
 
@@ -65,6 +67,17 @@ public class MainJFrame {
         tabbedPaneGui.setContentPane(new JTabbedPaneGui().getPanel1());
         tabbedPaneGui.pack();
         tabbedPaneGui.setVisible(true);
+
+        JFrame gfxFrame = new JFrame("Drawing Graphics!");
+        GFX graphicsPanel = new GFX();
+        gfxFrame.add(graphicsPanel);
+        gfxFrame.setSize(200, 500);
+        gfxFrame.setVisible(true);
+
+        ColorPickerGui colorPickerGui = new ColorPickerGui();
+        colorPickerGui.setSize(425, 150);
+        colorPickerGui.setVisible(true);
+
 
 
     }
