@@ -1,5 +1,7 @@
 package swing;
 
+import swing.jframe.graphics.DrawOvalGui;
+import swing.jframe.graphics.Oval;
 import swing.jframe.layouts.FormAbsoluteLayout;
 import swing.jframe.layouts.FormBorderLayout;
 import swing.jframe.layouts.FormBoxLayout;
@@ -42,6 +44,10 @@ public class Main {
         designerGuiTest.setContentPane(new GuiTest().getMainPanel());
         designerGuiTest.pack();
         designerGuiTest.setVisible(true);
+
+        DrawOvalGui ovalGui = new DrawOvalGui();
+        ovalGui.pack();
+        ovalGui.setVisible(true);
 
 
     }
