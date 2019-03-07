@@ -6,6 +6,7 @@ import swing.jframe.layouts.FormAbsoluteLayout;
 import swing.jframe.layouts.FormBorderLayout;
 import swing.jframe.layouts.FormBoxLayout;
 import swing.jframe.layouts.FormFlowLayout;
+import swing.practice.BrowserGui;
 import swing.practice.GuiTest;
 
 import javax.swing.*;
@@ -48,6 +49,9 @@ public class Main {
         DrawOvalGui ovalGui = new DrawOvalGui();
         ovalGui.pack();
         ovalGui.setVisible(true);
+
+        BrowserGui browser = new BrowserGui();
+        browser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
     }

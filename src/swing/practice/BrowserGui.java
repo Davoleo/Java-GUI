@@ -6,6 +6,8 @@ import javax.swing.event.HyperlinkListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
 
 /*************************************************
  * Author: Davoleo
@@ -30,8 +32,7 @@ public class BrowserGui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                //loadHTMLPage(e.getActionCommand());
-
+                loadHTMLPage(e.getActionCommand());
             }
         });
 
@@ -43,10 +44,27 @@ public class BrowserGui extends JFrame {
             @Override
             public void hyperlinkUpdate(HyperlinkEvent e)
             {
-                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED);
-                    //loadHTMLPage(e.getURL().toString());
+                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED)
+                    loadHTMLPage(e.getURL().toString());
             }
         });
+        add(new JScrollPane(display), BorderLayout.CENTER);
+        setSize(500, 300);
+        setVisible(true);
+    }
+
+    //Load html page to display
+    private void loadHTMLPage(String userText)
+    {
+        try
+        {
+            display.setPage(new URL(userText));
+            addressBar.setText(userText);
+        }
+        catch (IOException e)
+        {
+            System.out.println("WELCOME TO THE MALFORMED URL");
+        }
     }
 
 }
