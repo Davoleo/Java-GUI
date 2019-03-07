@@ -1,6 +1,7 @@
 package davoleo.javagui;
 
 import javax.swing.*;
+import java.awt.*;
 
 /*************************************************
  * Author: Davoleo
@@ -12,13 +13,16 @@ import javax.swing.*;
 
 public class Main {
 
+    public static JFrame mainGUI;
+
     public static void main(String[] args)
     {
-        JFrame mainGUI = new JFrame("MAIN");
+        mainGUI = new JFrame("MAIN");
         MainGui gui = new MainGui();
         mainGUI.setContentPane(gui.getContentPanel());
         mainGUI.pack();
         mainGUI.setVisible(true);
+        mainGUI.setLocation(Util.centerScreen(mainGUI.getWidth(), mainGUI.getHeight()));
         mainGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

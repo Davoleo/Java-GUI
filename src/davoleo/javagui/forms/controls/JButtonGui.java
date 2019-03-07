@@ -24,8 +24,8 @@ public class JButtonGui extends JFrame {
         setLayout(new FlowLayout());
 
         //Creating some Icons and init them using the images from the resources folder
-        Icon icon1 = new ImageIcon(getClass().getResource("../../../resources/40x40.png"));
-        Icon icon2 = new ImageIcon(getClass().getResource("../../../resources/ingot_blue.png"));
+        Icon icon1 = new ImageIcon(getClass().getResource("../../../../resources/40x40.png"));
+        Icon icon2 = new ImageIcon(getClass().getResource("../../../../resources/ingot_blue.png"));
 
         //Init buttons
         reg = new JButton("Reg Button");

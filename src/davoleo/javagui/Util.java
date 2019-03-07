@@ -1,6 +1,7 @@
 package davoleo.javagui;
 
 import javax.swing.*;
+import java.awt.*;
 
 /*************************************************
  * Author: Davoleo
@@ -29,10 +30,20 @@ public class Util {
         String fn = JOptionPane.showInputDialog("Enter first number");
         String sn = JOptionPane.showInputDialog("Enter second number");
 
-        int num1 = Integer.parseInt(fn);
-        int num2 = Integer.parseInt(sn);
-        int sum = num1 + num2;
+        try {
+            int num1 = Integer.parseInt(fn);
+            int num2 = Integer.parseInt(sn);
+            int sum = num1 + num2;
+            JOptionPane.showMessageDialog(null,"The sum of " + num1 + " and " + num2 + " is equals to " + sum,"Rouxls Kaard", JOptionPane.PLAIN_MESSAGE);
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(null, "devi per forza rompere il cazzo?", "MA SEI STUPIDO??", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
-        JOptionPane.showMessageDialog(null,"The sum of " + num1 + " and " + num2 + " is equals to " + sum,"Rouxls Kaard", JOptionPane.PLAIN_MESSAGE);
+    public static Point centerScreen(int formWidth, int formHeight)
+    {
+        return new Point((Toolkit.getDefaultToolkit().getScreenSize().width / 2) - (formWidth / 2), Toolkit.getDefaultToolkit().getScreenSize().height / 2 - (formHeight / 2));
     }
 }

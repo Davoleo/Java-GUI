@@ -1,5 +1,6 @@
 package davoleo.javagui;
 
+import com.sun.java.swing.plaf.motif.MotifLookAndFeel;
 import davoleo.javagui.forms.JFrameGui;
 import davoleo.javagui.forms.controls.*;
 import davoleo.javagui.forms.event.ActionEventGui;
@@ -14,11 +15,15 @@ import davoleo.javagui.forms.layouts.FormBoxLayout;
 import davoleo.javagui.forms.layouts.FormFlowLayout;
 import davoleo.javagui.forms.practice.BrowserGui;
 import davoleo.javagui.forms.practice.GuiTest;
-import swing.jframe.controls.*;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.event.InternalFrameAdapter;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
+import javax.swing.plaf.metal.MetalLookAndFeel;
+import javax.swing.plaf.synth.SynthLookAndFeel;
+import java.awt.*;
+import java.awt.event.*;
 
 /*************************************************
  * Author: Davoleo
@@ -56,9 +61,21 @@ public class MainGui {
     private JButton browserGui;
     private JButton designerTestGui;
     private JButton firstJFrameGui;
+    private JRadioButton radioMetal;
+    private JRadioButton radioNimbus;
+    private JPanel themePanel;
+    private JRadioButton radioWindows;
+    private JRadioButton radioWindowsC;
+    private JRadioButton radioMotif;
 
     public MainGui()
     {
+        radioMetal.addItemListener(new ThemeChangeHandler());
+        radioNimbus.addItemListener(new ThemeChangeHandler());
+        radioMotif.addItemListener(new ThemeChangeHandler());
+        radioWindows.addItemListener(new ThemeChangeHandler());
+        radioWindowsC.addItemListener(new ThemeChangeHandler());
+
         //OTHER GUIs --------------------------------------------------
         iOBoxesGui.addActionListener(new ActionListener() {
             @Override
@@ -72,7 +89,6 @@ public class MainGui {
             public void actionPerformed(ActionEvent e)
             {
                 JFrameGui gui = new JFrameGui();
-                gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 gui.setSize(200,100);
                 gui.setVisible(true);
             }
@@ -84,6 +100,7 @@ public class MainGui {
                 JFrame designerGuiTest = new JFrame("Designer Form Test");
                 designerGuiTest.setContentPane(new GuiTest().getMainPanel());
                 designerGuiTest.pack();
+                designerGuiTest.setLocation(Util.centerScreen(designerGuiTest.getWidth(), designerGuiTest.getHeight()));
                 designerGuiTest.setVisible(true);
             }
         });
@@ -92,6 +109,7 @@ public class MainGui {
             public void actionPerformed(ActionEvent e)
             {
                 BrowserGui browser = new BrowserGui();
+                browser.setSize(Toolkit.getDefaultToolkit().getScreenSize());
             }
         });
 
@@ -103,6 +121,7 @@ public class MainGui {
                 ActionEventGui actionEventGui = new ActionEventGui();
                 actionEventGui.setSize(500,100);
                 actionEventGui.setVisible(true);
+                actionEventGui.setLocation(Util.centerScreen(actionEventGui.getWidth(), actionEventGui.getHeight()));
             }
         });
         keyeventGui.addActionListener(new ActionListener() {
@@ -112,6 +131,7 @@ public class MainGui {
                 KeyEventGui keyGui = new KeyEventGui();
                 keyGui.setSize(200, 200);
                 keyGui.setVisible(true);
+                keyGui.setLocation(Util.centerScreen(keyGui.getWidth(), keyGui.getHeight()));
             }
         });
         mouseeventGui.addActionListener(new ActionListener() {
@@ -121,6 +141,7 @@ public class MainGui {
                 MouseEventGui mouseGui = new MouseEventGui();
                 mouseGui.setSize(400, 400);
                 mouseGui.setVisible(true);
+                mouseGui.setLocation(Util.centerScreen(mouseGui.getWidth(), mouseGui.getHeight()));
             }
         });
 
@@ -132,6 +153,7 @@ public class MainGui {
                 JButtonGui buttonGui = new JButtonGui();
                 buttonGui.setSize(300, 100);
                 buttonGui.setVisible(true);
+                buttonGui.setLocation(Util.centerScreen(buttonGui.getWidth(), buttonGui.getHeight()));
             }
         });
         checkboxGui.addActionListener(new ActionListener() {
@@ -141,6 +163,7 @@ public class MainGui {
                 JCheckboxGui checkboxGui = new JCheckboxGui();
                 checkboxGui.setSize(270, 100);
                 checkboxGui.setVisible(true);
+                checkboxGui.setLocation(Util.centerScreen(checkboxGui.getWidth(), checkboxGui.getHeight()));
             }
         });
         comboboxGui.addActionListener(new ActionListener() {
@@ -150,6 +173,7 @@ public class MainGui {
                 JComboboxGui comboboxGui = new JComboboxGui();
                 comboboxGui.setSize(300, 100);
                 comboboxGui.setVisible(true);
+                comboboxGui.setLocation(Util.centerScreen(comboboxGui.getWidth(), comboboxGui.getHeight()));
             }
         });
         radiobuttonGui.addActionListener(new ActionListener() {
@@ -160,6 +184,7 @@ public class MainGui {
                 JRadioButtonGui radioButtonGui = new JRadioButtonGui();
                 radioButtonGui.setSize(300, 100);
                 radioButtonGui.setVisible(true);
+                radioButtonGui.setLocation(Util.centerScreen(radioButtonGui.getWidth(), radioButtonGui.getHeight()));
             }
         });
         listGui.addActionListener(new ActionListener() {
@@ -169,6 +194,7 @@ public class MainGui {
                 JListGui listGui = new JListGui();
                 listGui.setSize(100, 200);
                 listGui.setVisible(true);
+                listGui.setLocation(Util.centerScreen(listGui.getWidth(), listGui.getHeight()));
             }
         });
         multilistGui.addActionListener(new ActionListener() {
@@ -178,6 +204,7 @@ public class MainGui {
                 JMultiListGui multiListGui = new JMultiListGui();
                 multiListGui.setSize(350, 120);
                 multiListGui.setVisible(true);
+                multiListGui.setLocation(Util.centerScreen(multiListGui.getWidth(), multiListGui.getHeight()));
             }
         });
         tabbedpaneGui.addActionListener(new ActionListener() {
@@ -188,6 +215,7 @@ public class MainGui {
                 tabbedPaneGui.setContentPane(new JTabbedPaneGui().getPanel1());
                 tabbedPaneGui.pack();
                 tabbedPaneGui.setVisible(true);
+                tabbedPaneGui.setLocation(Util.centerScreen(tabbedPaneGui.getWidth(), tabbedPaneGui.getHeight()));
             }
         });
 
@@ -199,7 +227,7 @@ public class MainGui {
                 FormBorderLayout borderLayout = new FormBorderLayout();
                 borderLayout.setSize(600, 500);
                 borderLayout.setVisible(true);
-                borderLayout.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                borderLayout.setLocation(Util.centerScreen(borderLayout.getWidth(), borderLayout.getHeight()));
             }
         });
         boxGui.addActionListener(new ActionListener() {
@@ -209,6 +237,7 @@ public class MainGui {
                 FormBoxLayout boxLayout = new FormBoxLayout();
                 boxLayout.setSize(350, 150);
                 boxLayout.setVisible(true);
+                boxLayout.setLocation(Util.centerScreen(boxLayout.getWidth(), boxLayout.getHeight()));
             }
         });
         absoluteGui.addActionListener(new ActionListener() {
@@ -218,6 +247,7 @@ public class MainGui {
                 FormAbsoluteLayout absoluteLayout = new FormAbsoluteLayout();
                 absoluteLayout.setSize(200, 150);
                 absoluteLayout.setVisible(true);
+                absoluteLayout.setLocation(Util.centerScreen(absoluteLayout.getWidth(), absoluteLayout.getHeight()));
             }
         });
         flowGui.addActionListener(new ActionListener() {
@@ -228,6 +258,7 @@ public class MainGui {
                 flowLayout.setContentPane(new FormFlowLayout().getPanel1());
                 flowLayout.pack();
                 flowLayout.setVisible(true);
+                flowLayout.setLocation(Util.centerScreen(flowLayout.getWidth(), flowLayout.getHeight()));
             }
         });
 
@@ -241,6 +272,7 @@ public class MainGui {
                 gfxFrame.add(graphicsPanel);
                 gfxFrame.setSize(200, 500);
                 gfxFrame.setVisible(true);
+                gfxFrame.setLocation(Util.centerScreen(gfxFrame.getWidth(),gfxFrame.getHeight()));
             }
         });
         colorpickerGui.addActionListener(new ActionListener() {
@@ -250,6 +282,7 @@ public class MainGui {
                 ColorPickerGui colorPickerGui = new ColorPickerGui();
                 colorPickerGui.setSize(425, 150);
                 colorPickerGui.setVisible(true);
+                colorPickerGui.setLocation(Util.centerScreen(colorPickerGui.getWidth(), colorPickerGui.getHeight()));
             }
         });
         drawovalGui.addActionListener(new ActionListener() {
@@ -259,6 +292,7 @@ public class MainGui {
                 DrawOvalGui ovalGui = new DrawOvalGui();
                 ovalGui.pack();
                 ovalGui.setVisible(true);
+                ovalGui.setLocation(Util.centerScreen(ovalGui.getWidth(), ovalGui.getHeight()));
             }
         });
     }
@@ -266,5 +300,25 @@ public class MainGui {
     public JPanel getContentPanel()
     {
         return contentPanel;
+    }
+
+    private class ThemeChangeHandler implements ItemListener {
+        @Override
+        public void itemStateChanged(ItemEvent e)
+        {
+            try {
+                UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+            } catch (IllegalAccessException e1) {
+                e1.printStackTrace();
+            } catch (InstantiationException e1) {
+                e1.printStackTrace();
+            } catch (UnsupportedLookAndFeelException e1) {
+                e1.printStackTrace();
+            } catch (ClassNotFoundException e1) {
+                e1.printStackTrace();
+            }
+
+            Main.mainGUI.repaint();
+        }
     }
 }
