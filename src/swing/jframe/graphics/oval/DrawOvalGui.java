@@ -1,4 +1,6 @@
-package swing.jframe.graphics;
+package swing.jframe.graphics.oval;
+
+import swing.jframe.graphics.oval.Oval;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;

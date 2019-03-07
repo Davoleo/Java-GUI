@@ -1,4 +1,4 @@
-package swing.practice;
+package swing.jframe.practice;
 
 import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;

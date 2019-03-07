@@ -1,4 +1,4 @@
-package swing.jframe.graphics;
+package swing.jframe.graphics.oval;
 
 import javax.swing.*;
 import java.awt.*;

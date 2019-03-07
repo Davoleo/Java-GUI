@@ -1,18 +1,28 @@
-package swing.practice;
+package swing;
 
 import javax.swing.*;
 
 /*************************************************
  * Author: Davoleo
- * Date / Hour: 01/12/2018 / 23:47
- * Class: swing.practice.GuiBoxes
+ * Date / Hour: 07/03/2019 / 18:47
+ * Class: Util
  * Project: JavaGUI
- * Copyright - © - Davoleo - 2018
+ * Copyright - © - Davoleo - 2019
  **************************************************/
 
-public class GuiBoxes {
+public class Util {
 
-    public static void main(String[] args)
+    public static void pause(int seconds)
+    {
+        try {
+            Thread.sleep(seconds*1000);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void runIOBoxes()
     {
         //Some super-simple sum program (Just using Swing input and output dialogs)
 
@@ -24,6 +34,5 @@ public class GuiBoxes {
         int sum = num1 + num2;
 
         JOptionPane.showMessageDialog(null,"The sum of " + num1 + " and " + num2 + " is equals to " + sum,"Rouxls Kaard", JOptionPane.PLAIN_MESSAGE);
-
     }
 }
