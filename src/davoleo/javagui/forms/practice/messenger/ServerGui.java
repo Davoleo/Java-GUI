@@ -87,4 +87,17 @@ public class ServerGui extends JFrame {
         showMessage(" Connected to " + connection.getInetAddress().getHostName() + " \n");
     }
 
+    //setup the stream to send and receive data
+    private void setupStreams() throws IOException
+    {
+        //send messages to someone
+        output = new ObjectOutputStream(connection.getOutputStream());
+        output.flush();
+
+        //receive messages from someone
+        input = new ObjectInputStream(connection.getInputStream());
+
+        showMessage("\n Streams are now setup! \n");
+    }
+
 }
