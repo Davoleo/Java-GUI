@@ -32,7 +32,7 @@ public class ServerGui extends JFrame {
     //constructor
     public ServerGui()
     {
-        super("Instant Messenger");
+        super("Instant Messenger Server");
 
         userText = new JTextField();
         userText.setEditable(false);
@@ -110,7 +110,7 @@ public class ServerGui extends JFrame {
             //active chat until the message CLIENT - END
             try {
                 message = (String) input.readObject();
-                showMessage(" \n" + message + message)
+                showMessage(" \n" + message + message);
             }
             catch (ClassNotFoundException e)
             {
@@ -134,5 +134,42 @@ public class ServerGui extends JFrame {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    //sends a message to client
+    private void sendMessage(String message)
+    {
+        try {
+            output.writeObject("SERVER - " + message);
+            output.flush();
+            showMessage("\nSERVER - " + message);
+        }
+        catch (IOException e) {
+            chat.append("\n ERROR: COULDN'T SEND THE MESSAGE");
+        }
+    }
+
+    //displays messages on the GUI
+    private void showMessage(final String text)
+    {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run()
+            {
+                chat.append(text);
+            }
+        });
+    }
+
+    //enable/disable user textbox "writability"
+    private void setInputEnabled(boolean enabled)
+    {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run()
+            {
+                userText.setEditable(enabled);
+            }
+        });
     }
 }

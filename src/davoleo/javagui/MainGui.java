@@ -62,7 +62,8 @@ public class MainGui {
     private JRadioButton radioWindows;
     private JRadioButton radioWindowsC;
     private JRadioButton radioMotif;
-    private JButton messengerGui;
+    private JButton messengerServer;
+    private JButton messengerClient;
 
     public MainGui()
     {
@@ -108,12 +109,13 @@ public class MainGui {
                 browser.setSize(Toolkit.getDefaultToolkit().getScreenSize());
             }
         });
-        messengerGui.addActionListener(new ActionListener() {
+        messengerServer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                ServerGui imGui = new ServerGui();
-                imGui.setLocation(Util.centerScreen(imGui.getWidth(), imGui.getHeight()));
+                ServerGui imServer = new ServerGui();
+                imServer.setLocation(Util.centerScreen(imServer.getWidth(), imServer.getHeight()));
+                imServer.startServer();
             }
         });
 
@@ -301,6 +303,13 @@ public class MainGui {
         });
     }
 
+    public void refreshForm()
+    {
+        Main.mainGUI.repaint();
+        for (Component component : this.contentPanel.getComponents())
+            component.repaint();
+    }
+
     public JPanel getContentPanel()
     {
         return contentPanel;
@@ -310,19 +319,25 @@ public class MainGui {
         @Override
         public void itemStateChanged(ItemEvent e)
         {
-            try {
-                UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-            } catch (IllegalAccessException e1) {
-                e1.printStackTrace();
-            } catch (InstantiationException e1) {
-                e1.printStackTrace();
-            } catch (UnsupportedLookAndFeelException e1) {
-                e1.printStackTrace();
-            } catch (ClassNotFoundException e1) {
-                e1.printStackTrace();
-            }
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run()
+                {
+                    try {
+                        UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+                    } catch (IllegalAccessException e1) {
+                        e1.printStackTrace();
+                    } catch (InstantiationException e1) {
+                        e1.printStackTrace();
+                    } catch (UnsupportedLookAndFeelException e1) {
+                        e1.printStackTrace();
+                    } catch (ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
 
-            Main.mainGUI.repaint();
+                    refreshForm();
+                }
+            });
         }
     }
 }
