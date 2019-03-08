@@ -1,6 +1,5 @@
 package davoleo.javagui;
 
-import com.sun.java.swing.plaf.motif.MotifLookAndFeel;
 import davoleo.javagui.forms.JFrameGui;
 import davoleo.javagui.forms.controls.*;
 import davoleo.javagui.forms.event.ActionEventGui;
@@ -15,13 +14,9 @@ import davoleo.javagui.forms.layouts.FormBoxLayout;
 import davoleo.javagui.forms.layouts.FormFlowLayout;
 import davoleo.javagui.forms.practice.BrowserGui;
 import davoleo.javagui.forms.practice.GuiTest;
+import davoleo.javagui.forms.practice.messenger.ServerGui;
 
 import javax.swing.*;
-import javax.swing.event.InternalFrameAdapter;
-import javax.swing.event.InternalFrameEvent;
-import javax.swing.event.InternalFrameListener;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -67,6 +62,7 @@ public class MainGui {
     private JRadioButton radioWindows;
     private JRadioButton radioWindowsC;
     private JRadioButton radioMotif;
+    private JButton messengerGui;
 
     public MainGui()
     {
@@ -110,6 +106,14 @@ public class MainGui {
             {
                 BrowserGui browser = new BrowserGui();
                 browser.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+            }
+        });
+        messengerGui.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                ServerGui imGui = new ServerGui();
+                imGui.setLocation(Util.centerScreen(imGui.getWidth(), imGui.getHeight()));
             }
         });
 
