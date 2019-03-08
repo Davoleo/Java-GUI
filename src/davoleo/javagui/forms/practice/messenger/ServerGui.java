@@ -100,4 +100,39 @@ public class ServerGui extends JFrame {
         showMessage("\n Streams are now setup! \n");
     }
 
+    //Handles the chat between users
+    private void whileChatting() throws IOException
+    {
+        String message = " You are now connected ";
+        sendMessage(message);
+        setInputEnabled(true);
+        do {
+            //active chat until the message CLIENT - END
+            try {
+                message = (String) input.readObject();
+                showMessage(" \n" + message + message)
+            }
+            catch (ClassNotFoundException e)
+            {
+                showMessage("\n WELCOME TO THE MALFORMED MESSAGE! (Message format unsupported)");
+            }
+
+        }while (!message.equals("CLIENT - END"));
+    }
+
+    //closes streams and sockets during shutdown
+    private void close()
+    {
+        showMessage("\n Closing streams and sockets... \n");
+        setInputEnabled(false);
+
+        try {
+            output.close();
+            input.close();
+            connection.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
