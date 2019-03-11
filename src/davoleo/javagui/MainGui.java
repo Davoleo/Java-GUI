@@ -14,7 +14,8 @@ import davoleo.javagui.forms.layouts.FormBoxLayout;
 import davoleo.javagui.forms.layouts.FormFlowLayout;
 import davoleo.javagui.forms.practice.BrowserGui;
 import davoleo.javagui.forms.practice.GuiTest;
-import davoleo.javagui.forms.practice.messenger.ServerGui;
+import davoleo.javagui.forms.practice.messenger.Client;
+import davoleo.javagui.forms.practice.messenger.Server;
 
 import javax.swing.*;
 import java.awt.*;
@@ -113,9 +114,18 @@ public class MainGui {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                ServerGui imServer = new ServerGui();
+                Server imServer = new Server();
                 imServer.setLocation(Util.centerScreen(imServer.getWidth(), imServer.getHeight()));
                 imServer.startServer();
+            }
+        });
+        messengerClient.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                Client imClient = new Client("127.0.0.1");
+                imClient.setLocation(Util.centerScreen(imClient.getWidth(), imClient.getHeight()));
+                imClient.startClient();
             }
         });
 

@@ -14,12 +14,12 @@ import java.net.Socket;
 /*************************************************
  * Author: Davoleo
  * Date / Hour: 08/03/2019 / 14:42
- * Class: ServerGui
+ * Class: Server
  * Project: JavaGUI
  * Copyright - © - Davoleo - 2019
  **************************************************/
 
-public class ServerGui extends JFrame {
+public class Server extends JFrame {
 
     //private fields
     private JTextField userText;
@@ -30,7 +30,7 @@ public class ServerGui extends JFrame {
     private Socket connection;
 
     //constructor
-    public ServerGui()
+    public Server()
     {
         super("Instant Messenger Server");
 
