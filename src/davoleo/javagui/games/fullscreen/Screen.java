@@ -1,4 +1,4 @@
-package davoleo.javagui.games;
+package davoleo.javagui.games.fullscreen;
 
 import javax.swing.*;
 import java.awt.*;
