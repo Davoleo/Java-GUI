@@ -19,7 +19,7 @@ public class Animation {
     private long totalTime;
 
     //Constructor
-    private Animation() {
+    public Animation() {
         scenes = new ArrayList();
         totalTime = 0;
         start();
