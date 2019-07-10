@@ -22,7 +22,7 @@ public class MainGame extends JFrame {
         main.run(dm);
     }
 
-    private Screen screen;
+    private ScreenManager screen;
     private Image bg;
     private Image pic;
     private Animation animation;
@@ -35,7 +35,7 @@ public class MainGame extends JFrame {
         setFont(new Font("Arial", Font.PLAIN, 24));
         loaded = false;
 
-        screen = new Screen();
+        screen = new ScreenManager();
         try {
             screen.setFullScreen(dm, this);
             loadImages();
