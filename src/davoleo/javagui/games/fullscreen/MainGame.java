@@ -1,6 +1,7 @@
 package davoleo.javagui.games.fullscreen;
 
 import davoleo.javagui.games.animation.Animation;
+import davoleo.javagui.games.sprite.Sprite;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,7 @@ import java.awt.*;
 
 public class MainGame extends JFrame {
 
+    private Sprite sprite;
     private ScreenManager screen;
     private Image bg;
     private Image js;
@@ -67,6 +69,10 @@ public class MainGame extends JFrame {
         animation.addScene(face1, 250);
         animation.addScene(face2, 250);
 
+        sprite = new Sprite(animation);
+        sprite.setVelocityX(0.3F);
+        sprite.setVelocityY(0.3F);
+
         loaded = true;
         repaint();
     }
@@ -80,7 +86,7 @@ public class MainGame extends JFrame {
         {
             long timePassed = System.currentTimeMillis() - animTime;
             animTime += timePassed;
-            animation.update(timePassed);
+            update(timePassed);
 
             Graphics2D graphics = screen.getGraphics();
             paint(graphics);
@@ -105,8 +111,27 @@ public class MainGame extends JFrame {
             g.drawImage(bg, 0, 0, null);
             g.drawImage(js, 0, 0, null);
             g.drawImage(pic, 50, 50, null);
-            g.drawImage(animation.getFrame(), 300, 50, null);
+            //Draw Static Animation
+            //g.drawImage(animation.getFrame(), 300, 50, null);
+            g.drawImage(sprite.getImage(), Math.round(sprite.getX()), Math.round(sprite.getY()), null);
+
         }
         g.drawString("Awesome!", 200, 200);
+    }
+
+    //update sprite
+    public void update(long timePassed) {
+
+        if (sprite.getX() <= 0)
+            sprite.setVelocityX(Math.abs(sprite.getVelocityX()));
+        else if (sprite.getX() + sprite.getSpriteWidth() >= screen.getWidth())
+            sprite.setVelocityX(-Math.abs(sprite.getVelocityX()));
+
+        if (sprite.getX() <= 0)
+            sprite.setVelocityY(Math.abs(sprite.getVelocityY()));
+        else if (sprite.getY() + sprite.getSpriteHeight() >= screen.getHeight())
+            sprite.setVelocityY(-Math.abs(sprite.getVelocityY()));
+
+        sprite.update(timePassed);
     }
 }
