@@ -50,10 +50,10 @@ public abstract class Core {
             long timePassed = System.currentTimeMillis() - cumulativeTime;
             cumulativeTime += timePassed;
 
-            //update(timePassed);
+            update(timePassed);
 
             Graphics2D graphics = screenManager.getGraphics();
-            //paint(graphics);
+            paint(graphics);
             graphics.dispose();
             screenManager.update();
 
@@ -77,6 +77,10 @@ public abstract class Core {
         window.setForeground(Color.BLACK);
         running = true;
     }
+
+    public abstract void update (long timePassed);
+
+    public abstract void paint(Graphics2D graphics);
 
 
 }
