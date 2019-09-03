@@ -1,4 +1,4 @@
-package davoleo.javagui.games.keysinput;
+package davoleo.javagui.games.input;
 
 import davoleo.javagui.games.Core;
 
@@ -56,9 +56,6 @@ public class KeyTest extends Core implements KeyListener {
     public void keyTyped(KeyEvent e) {
         e.consume();
     }
-
-    @Override
-    public void update(long timePassed) { }
 
     @Override
     public synchronized void paint(Graphics2D graphics) {

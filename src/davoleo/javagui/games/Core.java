@@ -78,7 +78,9 @@ public abstract class Core {
         running = true;
     }
 
-    public abstract void update (long timePassed);
+    public void update (long timePassed) {
+
+    }
 
     public abstract void paint(Graphics2D graphics);
 
