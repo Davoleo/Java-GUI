@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="net.davoleo.javagui.forms.controls.JTabbedPaneGui">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="6e313" binding="tabbedPane1" default-binding="true">
+        <constraints/>
+        <properties>
+          <preferredSize width="400" height="150"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="de19f" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <tabbedpane title="E"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="6b691" class="javax.swing.JButton" binding="button1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Button"/>
+                </properties>
+              </component>
+              <component id="3f84b" class="javax.swing.JRadioButton" binding="radioButton1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="RadioButton"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="26dcf" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <tabbedpane title="Crab Rave"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="fdecc" class="javax.swing.JCheckBox" binding="checkBox1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="CheckBox"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+      <component id="56c5e" class="javax.swing.JProgressBar" binding="progressBar1" default-binding="true">
+        <constraints/>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>

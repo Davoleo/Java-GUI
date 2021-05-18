@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="net.davoleo.javagui.MainGui">
+  <grid id="27dc6" binding="contentPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="1686" height="107"/>
+    </constraints>
+    <properties>
+      <toolTipText value="Controls GUIs"/>
+    </properties>
+    <border type="etched"/>
+    <children>
+      <grid id="94ae7" binding="controlGuis" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties/>
+        <border type="none" title="Control GUIs"/>
+        <children>
+          <component id="9a8a5" class="javax.swing.JButton" binding="buttonGui">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="JButton"/>
+            </properties>
+          </component>
+          <component id="230f7" class="javax.swing.JButton" binding="comboboxGui">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="JComboBox"/>
+            </properties>
+          </component>
+          <component id="d56ef" class="javax.swing.JButton" binding="multilistGui">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="JMultiList"/>
+            </properties>
+          </component>
+          <component id="e4509" class="javax.swing.JButton" binding="tabbedpaneGui">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="JTabbedPane"/>
+            </properties>
+          </component>
+          <component id="52c52" class="javax.swing.JButton" binding="checkboxGui">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="JCheckBox"/>
+            </properties>
+          </component>
+          <component id="f35f3" class="javax.swing.JButton" binding="listGui">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="JList"/>
+            </properties>
+          </component>
+          <component id="fb6ce" class="javax.swing.JButton" binding="radiobuttonGui">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="JRadioButton"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="5bbc3" binding="eventGuis" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties/>
+        <border type="none" title="Event GUIs"/>
+        <children>
+          <component id="76832" class="javax.swing.JButton" binding="actioneventGui">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="ActionEvents"/>
+            </properties>
+          </component>
+          <component id="6b70e" class="javax.swing.JButton" binding="keyeventGui">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="KeyEvents"/>
+            </properties>
+          </component>
+          <component id="7cd87" class="javax.swing.JButton" binding="mouseeventGui">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="MouseEvents"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="baabd" binding="gfxGuis" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties/>
+        <border type="none" title="GFX GUIs"/>
+        <children>
+          <component id="c8bbd" class="javax.swing.JButton" binding="drawovalGui">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Ovals"/>
+            </properties>
+          </component>
+          <component id="e5dc1" class="javax.swing.JButton" binding="colorpickerGui">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Color Picker"/>
+            </properties>
+          </component>
+          <component id="9c57d" class="javax.swing.JButton" binding="graphicsGui">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="GFX Gui"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="c582d" binding="layoutGuis" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties/>
+        <border type="none" title="Layout GUIs"/>
+        <children>
+          <component id="f38a5" class="javax.swing.JButton" binding="absoluteGui">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Absolute Layout"/>
+            </properties>
+          </component>
+          <component id="23718" class="javax.swing.JButton" binding="borderGui">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Border Layout"/>
+            </properties>
+          </component>
+          <component id="cff40" class="javax.swing.JButton" binding="boxGui">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Box Layout"/>
+            </properties>
+          </component>
+          <component id="cd7c7" class="javax.swing.JButton" binding="flowGui">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Flow Layout"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="4d89c" binding="otherGuis" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties/>
+        <border type="none" title="Other GUIs"/>
+        <children>
+          <component id="8162" class="javax.swing.JButton" binding="iOBoxesGui">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="I/O Boxes"/>
+            </properties>
+          </component>
+          <component id="fd0e6" class="javax.swing.JButton" binding="browserGui">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Browser"/>
+            </properties>
+          </component>
+          <component id="6ff27" class="javax.swing.JButton" binding="designerTestGui">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Designer Test"/>
+            </properties>
+          </component>
+          <component id="7507" class="javax.swing.JButton" binding="firstJFrameGui">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="FIRST GUI"/>
+            </properties>
+          </component>
+          <component id="7cc07" class="javax.swing.JButton" binding="messengerServer">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="IM Server"/>
+            </properties>
+          </component>
+          <component id="fc4b1" class="javax.swing.JButton" binding="messengerClient">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="IM Client"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="57f09" binding="themePanel" layout-manager="GridBagLayout">
+        <constraints/>
+        <properties/>
+        <border type="none" title="Theme (NYI)"/>
+        <children>
+          <component id="5714f" class="javax.swing.JRadioButton" binding="radioMetal">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Java Swing (Metal)"/>
+            </properties>
+          </component>
+          <component id="1443" class="javax.swing.JRadioButton" binding="radioNimbus">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <text value="MacOS-Style (Nimbus)"/>
+            </properties>
+          </component>
+          <component id="b8dd4" class="javax.swing.JRadioButton" binding="radioWindows">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <text value="Windows"/>
+            </properties>
+          </component>
+          <component id="2a6f3" class="javax.swing.JRadioButton" binding="radioWindowsC">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <text value="Windows Classic"/>
+            </properties>
+          </component>
+          <component id="d6256" class="javax.swing.JRadioButton" binding="radioMotif">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <text value="CDE/Motif"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+  <buttonGroups>
+    <group name="themeGroup">
+      <member id="5714f"/>
+      <member id="1443"/>
+      <member id="d6256"/>
+      <member id="b8dd4"/>
+      <member id="2a6f3"/>
+    </group>
+  </buttonGroups>
+</form>
