@@ -18,6 +18,7 @@ import net.davoleo.javagui.forms.practice.messenger.Client;
 import net.davoleo.javagui.forms.practice.messenger.Server;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -68,11 +69,18 @@ public class MainGui {
 
     public MainGui()
     {
-        radioMetal.addItemListener(new ThemeChangeHandler());
-        radioNimbus.addItemListener(new ThemeChangeHandler());
-        radioMotif.addItemListener(new ThemeChangeHandler());
-        radioWindows.addItemListener(new ThemeChangeHandler());
-        radioWindowsC.addItemListener(new ThemeChangeHandler());
+        radioMetal.setText(LookAndFeels.METAL.getText());
+        radioNimbus.setText(LookAndFeels.NIMBUS.getText());
+        radioMotif.setText(LookAndFeels.MOTIF.getText());
+        radioWindows.setText(LookAndFeels.WINDOWS.getText());
+        radioWindowsC.setText(LookAndFeels.WINDOWS_CLASSIC.getText());
+
+        ItemListener themeListener = new ThemeChangeHandler();
+        radioMetal.addItemListener(themeListener);
+        radioNimbus.addItemListener(themeListener);
+        radioMotif.addItemListener(themeListener);
+        radioWindows.addItemListener(themeListener);
+        radioWindowsC.addItemListener(themeListener);
 
         //OTHER GUIs --------------------------------------------------
         iOBoxesGui.addActionListener(new ActionListener() {
@@ -329,25 +337,23 @@ public class MainGui {
         @Override
         public void itemStateChanged(ItemEvent e)
         {
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run()
-                {
-                    try {
-                        UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-                    } catch (IllegalAccessException e1) {
-                        e1.printStackTrace();
-                    } catch (InstantiationException e1) {
-                        e1.printStackTrace();
-                    } catch (UnsupportedLookAndFeelException e1) {
-                        e1.printStackTrace();
-                    } catch (ClassNotFoundException e1) {
-                        e1.printStackTrace();
-                    }
+            if (e.getStateChange() != ItemEvent.SELECTED)
+                return;
 
-                    refreshForm();
+            try {
+                String themeText = ((JRadioButton) e.getItem()).getText();
+                LookAndFeels feels = LookAndFeels.getThemeByText(themeText);
+
+                if (feels != null) {
+                    UIManager.setLookAndFeel(feels.getCanonicalName());
+                    SwingUtilities.updateComponentTreeUI(Main.mainGUI);
                 }
-            });
+                else
+                    JOptionPane.showMessageDialog(Main.mainGUI,"Internal Naming Error while switching theme","Error", JOptionPane.ERROR_MESSAGE);
+            }
+            catch (IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException | ClassNotFoundException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 }
