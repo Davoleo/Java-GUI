@@ -8,10 +8,7 @@ import net.davoleo.javagui.forms.event.MouseEventGui;
 import net.davoleo.javagui.forms.graphics.ColorPickerGui;
 import net.davoleo.javagui.forms.graphics.GFX;
 import net.davoleo.javagui.forms.graphics.oval.DrawOvalGui;
-import net.davoleo.javagui.forms.layouts.FormAbsoluteLayout;
-import net.davoleo.javagui.forms.layouts.FormBorderLayout;
-import net.davoleo.javagui.forms.layouts.FormBoxLayout;
-import net.davoleo.javagui.forms.layouts.FormFlowLayout;
+import net.davoleo.javagui.forms.layouts.*;
 import net.davoleo.javagui.forms.practice.BrowserGui;
 import net.davoleo.javagui.forms.practice.GuiTest;
 import net.davoleo.javagui.forms.practice.messenger.Client;
@@ -66,6 +63,7 @@ public class MainGui {
     private JRadioButton radioMotif;
     private JButton messengerServer;
     private JButton messengerClient;
+    private JButton gridGui;
 
     public MainGui()
     {
@@ -124,7 +122,8 @@ public class MainGui {
             {
                 Server imServer = new Server();
                 imServer.setLocation(Util.centerScreen(imServer.getWidth(), imServer.getHeight()));
-                imServer.startServer();
+                Thread thread = new Thread(imServer::startServer);
+                thread.start();
             }
         });
         messengerClient.addActionListener(new ActionListener() {
@@ -133,7 +132,8 @@ public class MainGui {
             {
                 Client imClient = new Client("127.0.0.1");
                 imClient.setLocation(Util.centerScreen(imClient.getWidth(), imClient.getHeight()));
-                imClient.startClient();
+                Thread thread = new Thread(imClient::startClient);
+                thread.start();
             }
         });
 
@@ -284,6 +284,12 @@ public class MainGui {
                 flowLayout.setVisible(true);
                 flowLayout.setLocation(Util.centerScreen(flowLayout.getWidth(), flowLayout.getHeight()));
             }
+        });
+
+        gridGui.addActionListener(event -> {
+            FormGridLayout gridLayout = new FormGridLayout();
+            gridLayout.setVisible(true);
+            gridLayout.setLocation(Util.centerScreen(gridLayout.getWidth(), gridLayout.getHeight()));
         });
 
         //GFX GUIs -------------------------------------------------------
