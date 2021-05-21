@@ -70,6 +70,13 @@ public class Client extends JFrame {
         }
         finally {
             close();
+
+            try {
+                Thread.currentThread().join();
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

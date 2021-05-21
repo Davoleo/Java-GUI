@@ -71,10 +71,11 @@ public class Server extends JFrame {
                     showMessage("\n Server ended the connection! ");
                 } finally {
                     close();
+                    Thread.currentThread().join();
                 }
             }
         }
-        catch (IOException e) {
+        catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
