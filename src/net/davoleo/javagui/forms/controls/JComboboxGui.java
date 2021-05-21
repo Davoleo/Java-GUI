@@ -18,7 +18,7 @@ public class JComboboxGui extends JFrame{
     private JComboBox box;
     private JLabel picture;
 
-    private static String[] filename = {"../../../../resources/40x40.png", "../../../../resources/ingot_blue.png"};
+    private static String[] filename = {"40x40.png", "ingot_blue.png"};
     private Icon[] pics = {new ImageIcon(getClass().getResource(filename[0])), new ImageIcon(getClass().getResource(filename[1]))};
 
     public JComboboxGui()

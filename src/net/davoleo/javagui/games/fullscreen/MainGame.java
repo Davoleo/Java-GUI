@@ -58,12 +58,12 @@ public class MainGame extends JFrame {
 
     private void loadImages()
     {
-        bg = new ImageIcon(getClass().getResource("../../../../resources/forest_bg.jpg")).getImage();
-        js = new ImageIcon(getClass().getResource("../../../../resources/js.png")).getImage();
-        pic = new ImageIcon(getClass().getResource("../../../../resources/40x40.png")).getImage();
+        bg = new ImageIcon(getClass().getClassLoader().getResource("forest_bg.jpg")).getImage();
+        js = new ImageIcon(getClass().getClassLoader().getResource("js.png")).getImage();
+        pic = new ImageIcon(getClass().getClassLoader().getResource("40x40.png")).getImage();
 
-        Image face1 = new ImageIcon(getClass().getResource("../../../../resources/happy.png")).getImage();
-        Image face2 = new ImageIcon(getClass().getResource("../../../../resources/sad.png")).getImage();
+        Image face1 = new ImageIcon(getClass().getClassLoader().getResource("happy.png")).getImage();
+        Image face2 = new ImageIcon(getClass().getClassLoader().getResource("sad.png")).getImage();
 
         animation = new Animation();
         animation.addScene(face1, 250);

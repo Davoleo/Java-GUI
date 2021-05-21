@@ -51,8 +51,7 @@ public class MouseLook extends Core implements MouseMotionListener, KeyListener 
         Window window = screenManager.getFullScreenWindow();
         window.addMouseMotionListener(this);
         window.addKeyListener(this);
-        background = new ImageIcon(getClass().getResource("../../../../resources/forest_bg.jpg")).getImage();
-
+        background = new ImageIcon(getClass().getClassLoader().getResource("forest_bg.jpg")).getImage();
     }
 
     @Override
